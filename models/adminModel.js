@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const AdminSchema = new mongoose.Schema({
+const AdminSchema = new Schema({
   fullName: {
     type: String,
     required: true,
@@ -34,7 +34,7 @@ const AdminSchema = new mongoose.Schema({
   },
 
   assignedCenter: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Center",
   },
 
@@ -48,4 +48,4 @@ const AdminSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Admin", AdminSchema);
+export default model("Admin", AdminSchema);
