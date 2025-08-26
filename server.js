@@ -1,9 +1,11 @@
 import express from 'express';
 import cors from 'cors'; 
 import { connect } from 'mongoose'; //db
-require('dotenv').config();
-import { connectDB } from './db/db.js';
+import dotenv from 'dotenv';
+import connectDB from './db/db.js';
 import { json } from 'express'; 
+
+dotenv.config();
 
 const app = express();
 app.use(cors()); // to connect frontend and backend
