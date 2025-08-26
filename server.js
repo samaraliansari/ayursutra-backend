@@ -10,8 +10,13 @@ app.use(cors()); // to connect frontend and backend
 app.use(express.json()); // to accept json data
 
 // Routes
-import authRoutes from './routes/authRoutes';
-app.use('/api/auth', authRoutes);
+import userRoutes from "./routes/userRoutes.js";
+import doctorRoutes from "./routes/doctorRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+
+app.use("/api/users", userRoutes);
+app.use("/api/doctors", doctorRoutes);
+app.use("/api/admin", adminRoutes);
 
 
 //db
