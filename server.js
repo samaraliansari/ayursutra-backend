@@ -8,7 +8,7 @@ import { json } from 'express';
 dotenv.config();
 
 const app = express();
-app.use(cors()); // to connect frontend and backend
+app.use(cors({origin: process.env.FRONTEND_URL})); // to connect frontend and backend
 app.use(express.json()); // to accept json data
 
 // Routes
